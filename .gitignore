@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+pass-in-web/node_modules/
+pass-in-web/dist/
+pass-in-web/.local/
+
+pass-in-server-node/node_modules/
+pass-in-server-node/dist/
+pass-in-server-node/.local/
