@@ -6,3 +6,13 @@ Content-Type: application/json
     "details": "teste",
     "maximumAttendees": 100
 }
+
+###
+
+POST http://localhost:3333/events/19ab65e4-e651-4267-9d48-b97b1afc334d/attendees
+Content-Type: application/json
+
+{
+    "name": "illyana",
+    "email": "mail@mail.com"
+}
