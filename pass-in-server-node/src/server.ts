@@ -1,6 +1,11 @@
 import fastify from "fastify";
+
+import fastifySwagger from "@fastify/swagger";
+import fastifySwaggerUI from "@fastify/swagger-ui";
+
 import {
   ZodTypeProvider,
+  jsonSchemaTransform,
   serializerCompiler,
   validatorCompiler,
 } from "fastify-type-provider-zod";
@@ -10,7 +15,24 @@ import { getEvent } from "./routes/get-event";
 import { getAttendeeBadge } from "./routes/get-attendee-badge";
 import { checkIn } from "./routes/checkin";
 
-export const app = fastify().withTypeProvider<ZodTypeProvider>();
+export const app = fastify();
+
+app.register(fastifySwagger, {
+  swagger: {
+    consumes: ["application/json"],
+    produces: ["application/json"],
+    info: {
+      title: "pass.in",
+      description:
+        "Especificações da API de backend construída para o app pass.in durante o NLW Unite",
+      version: "1.0.0",
+    },
+  },
+  transform: jsonSchemaTransform,
+});
+app.register(fastifySwaggerUI, {
+  routePrefix: "docs",
+});
 
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
