@@ -29,3 +29,7 @@ GET http://localhost:3333/attendee/1/badge
 ###
 
 GET http://localhost:3333/attendee/1/check-in
+
+###
+
+GET http://localhost:3333/events/19ab65e4-e651-4267-9d48-b97b1afc334d/attendees?query=illyana
