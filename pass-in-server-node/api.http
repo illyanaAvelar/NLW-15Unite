@@ -16,3 +16,12 @@ Content-Type: application/json
     "name": "illyana",
     "email": "mail@mail.com"
 }
+
+###
+
+GET http://localhost:3333/events/19ab65e4-e651-4267-9d48-b97b1afc334d
+
+###
+
+
+GET http://localhost:3333/attendee/1/badge
