@@ -1,14 +1,14 @@
 import {
-  ActivityIndicator,
   Text,
   TouchableOpacity,
   TouchableOpacityProps,
-} from "react-native";
+  ActivityIndicator,
+} from "react-native"
 
 type Props = TouchableOpacityProps & {
-  title: string;
-  isLoading?: boolean;
-};
+  title: string
+  isLoading?: boolean
+}
 
 export function Button({ title, isLoading = false, ...rest }: Props) {
   return (
@@ -26,5 +26,5 @@ export function Button({ title, isLoading = false, ...rest }: Props) {
         </Text>
       )}
     </TouchableOpacity>
-  );
+  )
 }
